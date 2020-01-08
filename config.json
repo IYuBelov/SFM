@@ -1,0 +1,66 @@
+[
+	{
+		"stateName": "zero",
+		"events": {
+			"sys.zero.in": "event.zero.in",
+			"sys.zero.out": "event.zero.in"
+		},
+		"stateChildren": [
+			{
+				"stateName": "mainMenu",
+				"handleInput": "mainMenu",
+				"context": "mainMenu",
+				"stateChildren": [
+					{
+						"stateName": "menu1",
+						"handleInput": "menu1",
+						"context": "menu1"
+					},
+					{
+						"stateName": "menu2"
+					},
+					{
+						"stateName": "menu3",
+						"stateChildren": [
+							{
+								"stateName": "startBattle",
+								"handleInput": "startBattle",
+								"context": "startBattle",
+								"stateChildren": [
+									{
+										"stateName": "alive",
+										"stateChildren": [
+											{
+												"stateName": "ship",
+												"stateChildren": [
+													{
+														"stateName": "carrier",
+														"stateChildren": [
+															{
+																"stateName": "squadron",
+																"handleInput": "squadron",
+																"context": "squadron"
+															},
+															{
+																"stateName": "ship",
+																"handleInput": "ship",
+																"context": "ship"
+															}
+														]
+													}
+												]
+											}
+										]
+									},
+									{
+										"stateName": "dead"
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
